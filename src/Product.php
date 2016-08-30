@@ -1,11 +1,23 @@
 <?php
 
-class Product {
+class Product implements ShipInterface {
 
     private $id;
     private $title;
     private $price;
     private $weight;
+
+    /**
+     * Implement the weight function of ShipInterface
+     */
+
+    public function weight(){
+        return $this->weight;
+    }
+
+    /**
+     * Setter and Getter Functions
+     */
 
     public function setWeight($weight) {
         $this->weight = $weight;
