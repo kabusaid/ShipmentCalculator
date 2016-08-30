@@ -2,12 +2,16 @@
 
 class ShipmentCalculator {
 
-    public $minmumPricePerShipment = 10;
-    public $shipmentRatePer1Kg = 2;
+    private $minmumPricePerShipment = 10;
+    private $shipmentRatePer1Kg = 2;
 
-    public function calculateProduct(Product $product)
+    /**
+     * calculate the Shipment Price of any Shipment Type.
+     */
+
+    public function calculate(ShipInterface $ship)
     {
-        $weight = $product->getWeight();
+        $weight = $ship->weight();
         $shipmentPrice = $weight * $this->shipmentRatePer1Kg;
 
         if ($shipmentPrice > 10)
@@ -16,15 +20,24 @@ class ShipmentCalculator {
             return $this->minmumPricePerShipment;
     }
 
-    public function calculateCart(Cart $cart)
-    {
-        $weight = $cart->getTotalWeight();
-        $shipmentPrice = $weight * $this->shipmentRatePer1Kg;
+    /**
+     * Setter and Getter Functions
+     */
 
-        if ($shipmentPrice > 10)
-            return $shipmentPrice;
-        else
-            return $this->minmumPricePerShipment;
-    }    
+    public function setMinmumPricePerShipment(int $minmumPricePerShipment)    {
+        $this->minmumPricePerShipment = $minmumPricePerShipment;
+    }
+
+    public function getMinmumPricePerShipment()    {
+        return $this->minmumPricePerShipment;
+    }
+
+    public function setShipmentRatePer1Kg(int $shipmentRatePer1Kg)    {
+        $this->shipmentRatePer1Kg = $shipmentRatePer1Kg;
+    }
+
+    public function getShipmentRatePer1Kg()    {
+        return $this->shipmentRatePer1Kg;
+    }
 
 }
