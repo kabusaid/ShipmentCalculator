@@ -8,7 +8,7 @@ class Cart implements ShipInterface {
      * Implement the weight function of ShipInterface
      */
 
-    public function weight(){
+    public function weight()    {
         $totalWeight = 0;
         foreach ($this->products as $product) {
             $totalWeight += $product->getWeight();
@@ -20,7 +20,7 @@ class Cart implements ShipInterface {
      * Add Product to Cart
      */
 
-    public function addToCart($product)   {
+    public function addProduct($product)   {
         $this->products[] = $product;
     }
 
