@@ -24,19 +24,23 @@ class ShipmentCalculator {
      * Setter and Getter Functions
      */
 
-    public function setMinmumPricePerShipment(int $minmumPricePerShipment)    {
+    public function setMinmumPricePerShipment(int $minmumPricePerShipment)
+    {
         $this->minmumPricePerShipment = $minmumPricePerShipment;
     }
 
-    public function getMinmumPricePerShipment()    {
+    public function getMinmumPricePerShipment()
+    {
         return $this->minmumPricePerShipment;
     }
 
-    public function setShipmentRatePer1Kg(int $shipmentRatePer1Kg)    {
-        $this->shipmentRatePer1Kg = $shipmentRatePer1Kg;
+    public function setRate(int $rate)
+    {
+        $this->shipmentRatePer1Kg = $rate;
     }
 
-    public function getShipmentRatePer1Kg()    {
+    public function getRate()
+    {
         return $this->shipmentRatePer1Kg;
     }
 
